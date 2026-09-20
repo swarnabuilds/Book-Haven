@@ -1,4 +1,5 @@
 import ReadBtn from "@/components/shared/bookDeatils/ReadBtn";
+import WishlistBtn from "@/components/shared/bookDeatils/WishlistBtn";
 import { IBook } from "@/type/books.type"
 import Image from "next/image";
 
@@ -93,9 +94,7 @@ const BookDetailsPage = async( {params}:IBookDetailsProps ) => {
 
                     <div className="flex gap-4 pt-4">
                         <ReadBtn book={book}></ReadBtn>
-                        <button className="bg-[#50B1C9] text-white font-semibold text-lg px-7 py-3 rounded-xl hover:bg-[#3ea0b7] transition-colors">
-                            Wishlist
-                        </button>
+                        <WishlistBtn book={book}></WishlistBtn>
                     </div>
                 </div>
             </div>
