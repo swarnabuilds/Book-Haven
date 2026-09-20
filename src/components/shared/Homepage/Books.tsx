@@ -12,12 +12,13 @@ const getBooks = async() =>{
 const BooksPage = async() => {
     const books = await getBooks()
     return (
-       <div className="container mx-auto my-5">
-        <h2 className="text-center text-4xl text-[#23BE0A] my-6 font-semibold">Explore All Books</h2>
+
+       <div className="container mx-auto my-12">
+        <h2 className="text-center text-4xl text-[#23BE0A] my-6 font-semibold">Explore Popular Books</h2>
 
          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {
-                books.map((book:IBook) => <BookCard
+                books.slice(0,6).map((book:IBook) => <BookCard
                 key={book.bookId} 
                 book={book}></BookCard>)
             }
