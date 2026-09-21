@@ -3,7 +3,9 @@ import { IBook } from "@/type/books.type";
 
  
 const getBooks = async() =>{
-     const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/booksData.json`)
+     const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/booksData.json`,{
+        cache:"no-store"
+     })
     if(!res.ok){
         throw new Error('Failed Books data loaded')
     }
