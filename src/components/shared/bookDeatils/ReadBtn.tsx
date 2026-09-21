@@ -5,9 +5,9 @@ import { useContext } from "react";
 import { toast } from 'react-toastify';
 
 const ReadBtn = ({ book }: {book:IBook}) => {
-    const {readBooks, setRedBooks} = useContext(BooksContext)
+    const {readBooks, setReadBooks} = useContext(BooksContext)
     const handelRead = () => {
-        setRedBooks([...readBooks, book])
+        setReadBooks([...readBooks, book])
         toast.success(`you have read "${book.bookName}"`)
     }
     return (
